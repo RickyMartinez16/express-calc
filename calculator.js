@@ -16,6 +16,16 @@ app.post("/", (req, res) => {
     res.send(`The result of adding ${num1} and ${num2} is ${result}`)
 })
 
+app.get("/bmicalculator", (req, res) => {
+    res.sendFile(__dirname + "/bmiCalculator.html")
+})
+
+app.post("/bmicalculator", (req, res) => {
+    let weight = Number(req.body.weight);
+    let height = Number(req.body.height);
+    res.send("posted")
+})
+
 app.listen(3000, () => {
     console.log("listening on port 3000")
 })
