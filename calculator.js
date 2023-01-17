@@ -23,7 +23,13 @@ app.get("/bmicalculator", (req, res) => {
 app.post("/bmicalculator", (req, res) => {
     let weight = Number(req.body.weight);
     let height = Number(req.body.height);
-    res.send("posted")
+    var h = height * 0.0254;
+
+    let result = (weight * 703) / (h * h);
+
+    res.send(`Your BMI is ${result}`)
+
+    //not correct BMI calculations
 })
 
 app.listen(3000, () => {
