@@ -16,6 +16,7 @@ app.post("/", (req, res) => {
     res.send(`The result of adding ${num1} and ${num2} is ${result}`)
 })
 
+//get request
 app.get("/bmicalculator", (req, res) => {
     res.sendFile(__dirname + "/bmiCalculator.html")
 })
